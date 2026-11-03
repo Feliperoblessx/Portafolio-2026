@@ -1,0 +1,279 @@
+
+/* =================================
+   PÁGINA DE PROYECTOS
+================================= */
+
+.projects-page {
+  width: 100%;
+  background-color: #191919;
+  color: #ffffff;
+}
+
+/* =================================
+   PRIMERA SECCIÓN
+================================= */
+
+.projects-hero {
+  width: 100%;
+  min-height: calc(100vh - 88px);
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 7%;
+  background-color: #191919;
+}
+
+/* =================================
+   TÍTULO Y DESCRIPCIÓN
+================================= */
+
+.projects-intro {
+  position: relative;
+  z-index: 2;
+}
+
+.projects-intro h1 {
+  font-family: var(--font-titles);
+  font-size: clamp(42px, 4vw, 55px);
+  line-height: 1.1;
+
+  margin-bottom: 14px;
+}
+
+.projects-intro p {
+  font-family: var(--font-body);
+  font-size: clamp(17px, 1.5vw, 21px);
+  line-height: 1.35;
+
+  color: #eeeeee;
+}
+
+/* =================================
+   FIGURA DIAGONAL
+================================= */
+
+.projects-shape {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 40%;
+  height: 100%;
+
+  background-color: #ffffff;
+
+  clip-path: polygon(
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 768px) {
+
+  .projects-hero {
+    min-height: calc(100svh - 72px);
+    padding: 0 7%;
+    align-items: flex-start;
+    padding-top: 100px;
+  }
+
+  .projects-intro h1 {
+    font-size: clamp(40px, 10vw, 52px);
+  }
+
+  .projects-intro p {
+    font-size: 18px;
+  }
+
+  .projects-shape {
+    width: 65%;
+    height: 45%;
+
+    top: auto;
+    bottom: 0;
+  }
+
+}
+
+
+/* =================================
+   GALERÍA DE PROYECTOS
+================================= */
+
+.projects-gallery {
+  width: 100%;
+  min-height: 420px;
+
+  padding: 35px 10% 70px;
+
+  background-color: #191919;
+  color: #ffffff;
+}
+
+/* TÍTULO DE LA GALERÍA */
+
+.gallery-title {
+  font-family: var(--font-titles);
+  font-size: clamp(38px, 4vw, 50px);
+
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* =================================
+   TARJETA DEL PROYECTO
+================================= */
+
+.project-card {
+  width: 100%;
+
+  min-height: 275px;
+
+  border: 1px solid #aaaaaa;
+  border-radius: 8px;
+
+  padding: 30px;
+
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+
+  gap: 40px;
+}
+
+/* INFORMACIÓN */
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.project-info h3 {
+  font-family: var(--font-titles);
+  font-size: clamp(21px, 2vw, 27px);
+
+  margin-bottom: 12px;
+}
+
+.project-divider {
+  width: 100%;
+  height: 1px;
+
+  background-color: #aaaaaa;
+  margin-bottom: 15px;
+}
+
+.project-info p {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.4;
+
+  text-align: justify;
+  color: #eeeeee;
+
+  margin-bottom: 18px;
+}
+
+/* BOTÓN */
+
+.project-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  background-color: #ffffff;
+  color: #111111;
+
+  padding: 8px 14px;
+  border-radius: 7px;
+
+  font-family: var(--font-titles);
+  font-size: 16px;
+
+  transition: transform 0.25s ease;
+}
+
+.project-button:hover {
+  transform: translateY(-3px);
+}
+
+/* =================================
+   IMAGEN DEL PROYECTO
+================================= */
+
+.project-image-container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-image {
+  display: block;
+
+  width: 100%;
+  max-height: 210px;
+
+  object-fit: cover;
+  border-radius: 2px;
+
+  transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+  transform: scale(1.025);
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 768px) {
+
+  .projects-gallery {
+    padding: 35px 6% 50px;
+  }
+
+  .gallery-title {
+    font-size: 38px;
+    margin-bottom: 25px;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 25px;
+
+    padding: 22px;
+  }
+
+  .project-info h3 {
+    font-size: 24px;
+  }
+
+  .project-info p {
+    font-size: 16px;
+  }
+
+  .project-image-container {
+    order: -1;
+  }
+
+  .project-image {
+    max-height: 220px;
+  }
+
+}
+

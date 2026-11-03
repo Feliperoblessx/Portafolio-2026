@@ -1,4 +1,39 @@
-/* Configuración general */
+
+/* =================================
+   TIPOGRAFÍAS
+================================= */
+
+@font-face {
+  font-family: "Duality";
+  src: url("/Portafolio-2026/fonts/duality.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LettersForLearners";
+  src: url("/Portafolio-2026/fonts/letters-for-learners.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =================================
+   VARIABLES GLOBALES
+================================= */
+
+:root {
+  --font-titles: "Duality", serif;
+  --font-body: "LettersForLearners", sans-serif;
+
+  --color-black: #111111;
+  --color-white: #ffffff;
+}
+
+/* =================================
+   ESTILOS GENERALES
+================================= */
 
 * {
   margin: 0;
@@ -6,27 +41,18 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  background-color: #ffffff;
-  color: #111111;
-  font-family: Arial, sans-serif;
+  font-family: var(--font-body);
+  background-color: var(--color-white);
+  color: var(--color-black);
   overflow-x: hidden;
 }
 
-button,
-a {
-  font: inherit;
+h1, h2, h3 {
+  font-family: var(--font-titles);
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-button {
-  cursor: pointer;
 }

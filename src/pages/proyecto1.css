@@ -1,0 +1,773 @@
+
+.ashes-page {
+  width: 100%;
+  background: #191919;
+  color: #ffffff;
+}
+
+.ashes-hero {
+  width: 100%;
+  min-height: calc(100vh - 88px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 45px 5%;
+
+  position: relative;
+  overflow: hidden;
+
+  background: #191919;
+}
+
+/* FIGURA DIAGONAL */
+
+.ashes-hero::after {
+  content: "";
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+
+  width: 70%;
+  height: 100%;
+
+  background: #ffffff;
+
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+
+  z-index: 0;
+}
+
+/* =================================
+   INFORMACIÓN DEL PROYECTO
+================================= */
+
+.ashes-intro {
+  width: 37%;
+  max-width: 440px;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* LOGO */
+
+.ashes-logo {
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+.ashes-logo img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  object-fit: contain;
+}
+
+.ashes-intro p {
+  font-family: var(--font-body);
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.45;
+
+  color: #eeeeee;
+}
+
+/* =================================
+   PORTÁTIL
+================================= */
+
+.ashes-laptop {
+  width: 61%;
+  max-width: 680px;
+
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ashes-laptop-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* =================================
+   PANTALLA DEL PORTÁTIL
+================================= */
+
+.ashes-screen {
+  position: absolute;
+
+  top: 5.2%;
+  left: 10.8%;
+
+  width: 78.4%;
+  height: 55.5%;
+
+  background: #050505;
+  border-radius: 9px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  color: #ffffff;
+}
+
+/* NAVEGADOR */
+
+.ashes-browser-header {
+  height: 21%;
+  min-height: 30px;
+
+  padding: 5px 3%;
+
+  background: #191919;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ashes-browser-tab {
+  width: 45%;
+
+  padding: 4px 8px;
+
+  background: #303030;
+  border-radius: 5px 5px 0 0;
+
+  font-family: Arial, sans-serif;
+  font-size: clamp(6px, 0.65vw, 10px);
+}
+
+.ashes-browser-address {
+  width: 100%;
+
+  padding: 4px 10px;
+
+  background: #292929;
+  border: 1px solid #444444;
+  border-radius: 20px;
+
+  color: #eeeeee;
+
+  font-family: Arial, sans-serif;
+  font-size: clamp(6px, 0.6vw, 9px);
+}
+
+/* =================================
+   GALERÍA
+================================= */
+
+.ashes-gallery {
+  flex: 1;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 2% 5% 3%;
+}
+
+.ashes-gallery h2 {
+  font-family: var(--font-titles);
+  font-size: clamp(16px, 1.5vw, 23px);
+
+  margin-bottom: 2%;
+}
+
+/* CARRUSEL */
+
+.carousel {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.carousel-image-container {
+  width: 85%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+/* FLECHAS */
+
+.carousel-arrow {
+  position: absolute;
+  z-index: 2;
+
+  width: 27px;
+  height: 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.9);
+  color: #111111;
+
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+}
+
+.carousel-arrow:hover {
+  transform: scale(1.12);
+}
+
+.carousel-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.carousel-arrow.previous {
+  left: 0;
+}
+
+.carousel-arrow.next {
+  right: 0;
+}
+
+/* INDICADORES */
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 7px;
+  padding-top: 7px;
+}
+
+.carousel-dot {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+
+  background: #777777;
+  cursor: pointer;
+}
+
+.carousel-dot.selected {
+  background: #ffffff;
+  transform: scale(1.3);
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 768px) {
+
+  .ashes-hero {
+    min-height: auto;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    padding: 55px 7% 40px;
+    gap: 40px;
+  }
+
+  .ashes-hero::after {
+    width: 100%;
+    height: 45%;
+
+    top: auto;
+    bottom: 0;
+  }
+
+  .ashes-intro {
+    width: 100%;
+    max-width: none;
+  }
+
+  .ashes-logo img {
+    max-width: 320px;
+  }
+
+  .ashes-intro p {
+    font-size: 17px;
+  }
+
+  .ashes-laptop {
+    width: 115%;
+    max-width: none;
+
+    align-self: center;
+    margin-left: -7.5%;
+  }
+
+  .ashes-screen {
+    border-radius: 6px;
+  }
+
+  .ashes-browser-header {
+    min-height: 20px;
+  }
+
+  .carousel-arrow {
+    width: 22px;
+    height: 22px;
+  }
+
+  .carousel-arrow svg {
+    width: 15px;
+    height: 15px;
+  }
+
+}
+
+
+/* =================================
+   DOCUMENTACIÓN DE ASHES OF MIND
+================================= */
+
+.ashes-details {
+  width: 100%;
+  background-color: #191919;
+  color: #ffffff;
+
+  padding: 35px 7% 45px;
+}
+
+/* =================================
+   TARJETA PRINCIPAL
+================================= */
+
+.sanity-card {
+  width: 100%;
+  max-width: 1100px;
+  min-height: 230px;
+
+  margin: 0 auto 22px;
+  padding: 28px 30px;
+
+  border: 1px solid #999999;
+  border-radius: 8px;
+
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  align-items: center;
+  gap: 45px;
+}
+
+/* INFORMACIÓN */
+
+.sanity-info {
+  width: 100%;
+}
+
+.sanity-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 10px;
+}
+
+.sanity-heading h2,
+.sanity-text-card h2 {
+  font-family: var(--font-titles);
+  font-size: clamp(22px, 2vw, 27px);
+  font-weight: normal;
+}
+
+.sanity-heading svg {
+  flex-shrink: 0;
+}
+
+.sanity-divider {
+  width: 100%;
+  height: 1px;
+
+  background-color: #aaaaaa;
+  margin-bottom: 15px;
+}
+
+.sanity-info p,
+.sanity-text-card p {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.4;
+  color: #eeeeee;
+
+  text-align: justify;
+}
+
+/* IMAGEN */
+
+.sanity-image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sanity-image-container img {
+  width: 90%;
+  max-height: 180px;
+
+  object-fit: contain;
+
+  transform: rotate(4deg);
+  transition: transform 0.3s ease;
+}
+
+.sanity-image-container img:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+/* =================================
+   DOS TARJETAS INFERIORES
+================================= */
+
+.sanity-columns {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.sanity-text-card {
+  min-height: 175px;
+
+  padding: 20px 23px;
+
+  border: 1px solid #999999;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sanity-text-card h2 {
+  margin-bottom: 9px;
+}
+
+.sanity-text-card .sanity-divider {
+  margin-bottom: 14px;
+}
+
+/* =================================
+   BOTÓN BEHANCE
+================================= */
+
+.sanity-behance {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 33px;
+}
+
+.behance-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 9px 16px;
+
+  background-color: #ffffff;
+  color: #111111;
+
+  border-radius: 7px;
+
+  font-family: var(--font-titles);
+  font-size: 16px;
+
+  transition: transform 0.25s ease;
+}
+
+.behance-button:hover {
+  transform: translateY(-3px);
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 768px) {
+
+  .ashes-details {
+    padding: 30px 6% 40px;
+  }
+
+  .sanity-card {
+    grid-template-columns: 1fr;
+    gap: 25px;
+
+    padding: 22px;
+  }
+
+  .sanity-heading h2 {
+    font-size: 24px;
+  }
+
+  .sanity-info p,
+  .sanity-text-card p {
+    font-size: 16px;
+  }
+
+  .sanity-image-container img {
+    width: 100%;
+    max-height: 220px;
+  }
+
+  .sanity-columns {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .sanity-text-card {
+    min-height: auto;
+    padding: 22px;
+  }
+
+  .sanity-text-card h2 {
+    font-size: 24px;
+  }
+
+  .behance-button {
+    font-size: 15px;
+    text-align: center;
+  }
+
+}
+
+
+/* =================================
+   SECCIÓN EFECTOS DE CORDURA
+================================= */
+
+.effects-details {
+  width: 100%;
+  background-color: #191919;
+  color: #ffffff;
+
+  padding: 35px 7% 50px;
+}
+
+/* =================================
+   TARJETA PRINCIPAL
+================================= */
+
+.effects-card {
+  width: 100%;
+  max-width: 1100px;
+  min-height: 220px;
+
+  margin: 0 auto 27px;
+  padding: 28px 30px;
+
+  border: 1px solid #999999;
+  border-radius: 8px;
+
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  align-items: center;
+  gap: 45px;
+}
+
+/* INFORMACIÓN */
+
+.effects-info {
+  width: 100%;
+}
+
+.effects-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 10px;
+}
+
+.effects-heading h2,
+.effects-text-card h2 {
+  font-family: var(--font-titles);
+  font-size: clamp(22px, 2vw, 27px);
+  font-weight: normal;
+}
+
+.effects-heading svg {
+  flex-shrink: 0;
+}
+
+.effects-divider {
+  width: 100%;
+  height: 1px;
+
+  background-color: #aaaaaa;
+  margin-bottom: 15px;
+}
+
+.effects-info p,
+.effects-text-card p {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.4;
+
+  color: #eeeeee;
+  text-align: justify;
+}
+
+/* IMAGEN */
+
+.effects-image-container {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.effects-image-container img {
+  width: 90%;
+  max-height: 180px;
+
+  object-fit: contain;
+
+  transform: rotate(4deg);
+  transition: transform 0.3s ease;
+}
+
+.effects-image-container img:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+/* =================================
+   TARJETAS INFERIORES
+================================= */
+
+.effects-columns {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.effects-text-card {
+  min-height: 175px;
+
+  padding: 20px 23px;
+
+  border: 1px solid #999999;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.effects-text-card h2 {
+  margin-bottom: 9px;
+}
+
+.effects-text-card .effects-divider {
+  margin-bottom: 14px;
+}
+
+/* =================================
+   BOTÓN BEHANCE
+================================= */
+
+.effects-behance {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 33px;
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 768px) {
+
+  .effects-details {
+    padding: 30px 6% 40px;
+  }
+
+  .effects-card {
+    grid-template-columns: 1fr;
+    gap: 25px;
+
+    padding: 22px;
+  }
+
+  .effects-heading h2 {
+    font-size: 24px;
+  }
+
+  .effects-info p,
+  .effects-text-card p {
+    font-size: 16px;
+  }
+
+  .effects-image-container img {
+    width: 100%;
+    max-height: 220px;
+  }
+
+  .effects-columns {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .effects-text-card {
+    min-height: auto;
+    padding: 22px;
+  }
+
+  .effects-text-card h2 {
+    font-size: 24px;
+  }
+
+}
+
+
+
+
