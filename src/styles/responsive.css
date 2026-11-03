@@ -1,0 +1,7 @@
+/* Adaptación inicial para celulares */
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+}
