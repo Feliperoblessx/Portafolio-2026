@@ -417,7 +417,7 @@ function Proyecto1() {
   </div>
 
 
-  {/* BOTÓN A BEHANCE */}
+  
   <div className="effects-behance">
 
     <a
