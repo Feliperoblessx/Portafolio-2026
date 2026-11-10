@@ -4,9 +4,11 @@
 ================================= */
 
 .projects-page {
-  width: 100%;
+   width: 100%;
+  min-height: 100vh;
   background-color: #191919;
   color: #ffffff;
+  overflow: hidden;
 }
 
 /* =================================
@@ -237,9 +239,150 @@
   transform: scale(1.025);
 }
 
+
+/* =================================
+   SEGUNDO PROYECTO: TIDY UP!
+================================= */
+
+.tidy-card {
+  width: 82%;
+  max-width: 1400px;
+  margin: 40px auto 80px;
+  padding: 45px 60px;
+
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  align-items: center;
+  gap: 50px;
+
+  border: 1px solid #bdbdbd;
+  border-radius: 10px;
+  background: #191919;
+  box-sizing: border-box;
+}
+
+.tidy-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tidy-info h2 {
+  font-family: "Duality", serif;
+  font-size: 38px;
+  color: white;
+  margin: 0;
+}
+
+.tidy-divider {
+  width: 100%;
+  height: 1px;
+  background: #bdbdbd;
+  margin: 20px 0 25px;
+}
+
+.tidy-info p {
+  font-family: "Letters for Learners", sans-serif;
+  font-size: 19px;
+  line-height: 1.5;
+  color: white;
+  margin: 0 0 35px;
+  text-align: justify;
+}
+
+.tidy-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 13px 25px;
+  border-radius: 10px;
+
+  background: white;
+  color: black;
+  text-decoration: none;
+
+  font-family: "Duality", serif;
+  font-size: 20px;
+
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.tidy-button:hover {
+  transform: translateY(-4px);
+  background: #e5e5e5;
+}
+
+/* IMAGEN DEL PROYECTO */
+
+.tidy-image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tidy-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+}
+
 /* =================================
    RESPONSIVE
 ================================= */
+
+@media (max-width: 768px) {
+
+  .tidy-card {
+    width: 90%;
+    padding: 30px 25px;
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .tidy-info h2 {
+    font-size: 32px;
+  }
+
+  .tidy-info p {
+    font-size: 17px;
+  }
+
+  .tidy-image-container {
+    grid-row: 1;
+  }
+
+  .tidy-image {
+    max-width: 260px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .tidy-card {
+    width: 92%;
+    padding: 25px 20px;
+  }
+
+  .tidy-info h2 {
+    font-size: 28px;
+  }
+
+  .tidy-info p {
+    font-size: 16px;
+  }
+
+  .tidy-button {
+    font-size: 18px;
+  }
+
+}
+
+
+
 
 @media (max-width: 768px) {
 

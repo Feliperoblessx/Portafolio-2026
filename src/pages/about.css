@@ -1,0 +1,313 @@
+
+.about-page {
+  width: 100%;
+  background-color: #191919;
+  color: white;
+  overflow: hidden;
+}
+
+.about-hero {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 70px 7%;
+  overflow: hidden;
+}
+
+/* FIGURA BLANCA DIAGONAL */
+.about-hero::after {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 85%;
+  right: 0;
+  bottom: 0;
+  background: white;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  z-index: 0;
+}
+
+/* TEXTO */
+.about-content {
+  position: relative;
+  z-index: 2;
+  max-width: 550px;
+}
+
+.about-content h1 {
+  font-family: var(--font-titles);
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  margin: 0 0 12px;
+  font-weight: normal;
+}
+
+.about-content p {
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  line-height: 1.45;
+  margin: 0;
+  max-width: 550px;
+}
+
+/* FOTOGRAFÍA */
+.about-image-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.about-image {
+  width: 100%;
+  max-width: 430px;
+  max-height: 430px;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+
+/* =================================
+   SEGUNDA SECCIÓN - SOBRE MÍ
+================================= */
+
+.about-info {
+  width: 100%;
+  padding: 30px 6.5% 80px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px 14px;
+  background-color: #191919;
+}
+
+/* TARJETAS */
+.about-card {
+  border: 1px solid #bdbdbd;
+  border-radius: 9px;
+  padding: 16px 19px;
+  min-height: 185px;
+  color: white;
+}
+
+.about-card h2 {
+  font-family: var(--font-titles);
+  font-size: 1.8rem;
+  font-weight: normal;
+  margin: 0 0 10px;
+}
+
+.about-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #bdbdbd;
+  margin-bottom: 17px;
+}
+
+.about-card p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* LO QUE ME GUSTA HACER */
+.about-interest {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.about-icon {
+  width: 43px;
+  height: 34px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.about-icon img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.about-interest p {
+  font-size: 0.95rem;
+}
+
+/* MIS PILARES */
+.about-pillars {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.pillar-item {
+  min-height: 53px;
+  padding: 8px 12px;
+  background-color: white;
+  color: #111;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pillar-item img {
+  width: 29px;
+  height: 29px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.pillar-item span {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+
+/* PROGRAMAS */
+.about-programs {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 9px;
+  align-items: start;
+  padding-top: 18px;
+}
+
+.program-item {
+  min-width: 0;
+  text-align: center;
+}
+
+.program-logo {
+  width: 100%;
+  max-width: 55px;
+  height: 38px;
+  margin: 0 auto 5px;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.program-logo img {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+}
+
+.program-item p {
+  font-size: 0.72rem;
+  line-height: 1.15;
+  overflow-wrap: break-word;
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 900px) {
+  .about-info {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-info {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 25px 7% 55px;
+  }
+
+  .about-card {
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .about-card h2 {
+    font-size: 1.65rem;
+  }
+
+  .about-card p {
+    font-size: 1rem;
+  }
+
+  .about-pillars {
+    gap: 10px;
+  }
+
+  .pillar-item {
+    padding: 9px;
+  }
+
+  .about-programs {
+    gap: 12px;
+  }
+
+  .program-logo {
+    max-width: 52px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 55px 8% 0;
+  }
+
+  .about-content {
+    max-width: 100%;
+  }
+
+  .about-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .about-content p {
+    font-size: 1.15rem;
+  }
+
+  .about-hero::after {
+    width: 75%;
+    height: 45%;
+  }
+
+  .about-image-container {
+    min-height: 300px;
+  }
+
+  .about-image {
+    max-width: 300px;
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    padding-top: 40px;
+  }
+
+  .about-image-container {
+    min-height: 250px;
+  }
+
+  .about-image {
+    max-width: 250px;
+  }
+}

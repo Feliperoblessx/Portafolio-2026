@@ -35,7 +35,7 @@ function Projects() {
 
         </section>
 
-        
+
         <section className="projects-gallery">
 
           <h2 className="gallery-title">Proyectos 2026</h2>
@@ -89,6 +89,49 @@ function Projects() {
 
         </section>
 
+        <motion.section
+          className="tidy-card"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7 }}
+        >
+          {/* INFORMACIÓN DEL PROYECTO */}
+          <div className="tidy-info">
+
+            <h2>Tidy Up!</h2>
+
+            <div className="tidy-divider"></div>
+
+            <p>
+              Tidy Up! es un juego de realidad virtual para celulares
+              Android, utilizando un visor Google Cardboard. El jugador
+              aparece en el pasillo de una casa donde conoce al pequeño
+              Timy, un pingüino que necesita ayuda para ordenar su cuarto.
+              Para ayudarlo debe explorar su cuarto, encontrar los
+              juguetes desordenados y guardarlos en el cajón de juguetes.
+            </p>
+
+            <Link to="/proyecto2" className="tidy-button">
+              Explorar Proyecto
+              <ArrowRight size={18} />
+            </Link>
+
+          </div>
+
+
+          <div className="tidy-image-container">
+
+
+            <img
+              src={`${import.meta.env.BASE_URL}images/tidy-up.png`}
+              alt="Logo de Tidy Up!"
+              className="tidy-image"
+            />
+
+          </div>
+
+        </motion.section>
       </main>
     </>
   );
